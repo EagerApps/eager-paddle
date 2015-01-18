@@ -48,7 +48,7 @@ window.EagerPaddle = {
 				link.id = 'paddle-checkout-' + product.product;
 				link.className = 'paddle_button';
 				link.href = 'https://pay.paddle.com/checkout/' + product.product;
-				link.text = 'Buy';
+				link.text = this.settings.button;
 
 				// insert the data attributes
 				for(var property in product) {
