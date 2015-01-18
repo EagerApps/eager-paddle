@@ -17,6 +17,11 @@
 	},
     "options": {
         "properties": {
+        	"button": {
+        		"title": "Button",
+        		"description": "The text to show on the buy button(s).",
+        		"type": "string"
+        	},
             "products": {
                 "title": "Products",
                 "type": "array",
