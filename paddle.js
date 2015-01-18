@@ -38,7 +38,8 @@ window.EagerPaddle = {
 			var product = products[index],
 				wrapper = document.getElementById(product.element);
 
-			console.log(product.element, wrapper);
+			// @todo remove once finished testing.
+			console.log(product);
 
 			if (wrapper !== null)
 			{
