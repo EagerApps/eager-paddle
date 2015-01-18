@@ -77,7 +77,7 @@
                     		"description": "By default the checkout will show the standard Paddle success page. Setting this will instead redirect the customer to your URL instead of showing the standard Paddle message.",
 	                        "type": "string"
                         },
-                        "allow_quantity": {
+                        "allowQuantity": {
 							"title": "Allow Quantity",
 							"description": "Should we show the quantity selector on the checkout page?",
 							"type": "boolean"
