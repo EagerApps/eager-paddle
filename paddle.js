@@ -38,9 +38,6 @@ window.EagerPaddle = {
 			var product = products[index],
 				wrapper = document.getElementById(product.element);
 
-			// @todo remove once finished testing.
-			console.log(this.settings);
-
 			if (wrapper !== null)
 			{
 				var link = document.createElement('a');
@@ -49,7 +46,7 @@ window.EagerPaddle = {
 				link.id = 'paddle-checkout-' + product.product;
 				link.className = 'paddle_button';
 				link.href = 'https://pay.paddle.com/checkout/' + product.product;
-				link.text = this.settings.button;
+				link.text = this.options.button;
 
 				// insert the data attributes
 				for(var property in product) {
