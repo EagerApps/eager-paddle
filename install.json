@@ -1,0 +1,112 @@
+{
+	"resources": {
+		"body": [
+			{
+				"type": "script",
+				"src": "http://code.jquery.com/jquery-2.1.3.min.js"
+			},
+			{
+				"type": "script",
+				"src": "./paddle.js"
+			},
+			{
+				"type": "script",
+				"contents": "EagerPaddle.init(INSTALL_OPTIONS)"
+			}
+		]
+	},
+    "options": {
+        "properties": {
+            "products": {
+                "title": "Products",
+                "type": "array",
+                "items": {
+                    "title": "Product",
+                    "description": "Please fill out the product details from your paddle account.",
+                    "type": "object",
+                    "properties": {
+                        "element": {
+                            "title": "Element",
+                            "description": "The element where the button will be rendered inside of.",
+                            "type": "string",
+                            "format": "element"
+                        },
+                        "product": {
+                            "title": "Product",
+                            "description": "Pass your Product ID from the Paddle Dashboard via this parameter.",
+                            "type": "number"
+                        },
+                        "theme": {
+                            "title": "Theme",
+                            "description": "Sets the theme of the button. By default this is set to green we offer a handful of other themes too. You can set this value to none to not use any styling so you can apply your own using CSS.",
+                            "type": "string",
+                            "enum": [
+                                "green",
+                                "light",
+                                "dark",
+                                "none"
+                            ],
+                            "enumNames": {
+								"green": "Green",
+								"light": "Light",
+								"dark": "Dark",
+								"none": "None"
+                        	}
+                        },
+                        "stylesheet": {
+	                        "title": "Stylesheet",
+	                        "description": "Custom CSS you want to apply to your button.",
+							"type": "description",
+							"showIf": {
+								"theme": "none"
+							}
+	                    },
+                        "passthough": {
+	                        "title": "Passthough",
+	                        "description": "This value will be passed back to your server if you're using a 'webhook' fulfillment type, or subscriptions.",
+	                        "type": "string"
+                        },
+	                    "success": {
+	                        "title": "Success",
+                    		"description": "By default the checkout will show the standard Paddle success page. Setting this will instead redirect the customer to your URL instead of showing the standard Paddle message.",
+	                        "type": "string"
+                        },
+                        "allow_quantity": {
+							"title": "Allow Quantity",
+							"description": "Should we show the quantity selector on the checkout page?",
+							"type": "boolean"
+	                    },
+                        "coupon": {
+							"title": "Coupon",
+							"description": "Use this field to automatically apply a coupon to the checkout.",
+							"type": "string"
+	                   	},
+	                   	"quantity": {
+							"title": "Quantity",
+							"description": "Change the quantity of the product selected on the checkout page.",
+							"type": "number"
+		                },
+                        "price": {
+	                        "title": "Price",
+                			"description": "This field allows you to dynamically override the price charged at checkout.",
+	                        "type": "string"
+                        },
+                        "auth": {
+	                        "title": "Auth",
+	                        "description": "Use this to sign your price field and dynamically override the products price.",
+	                        "type": "string"
+                        },
+                        "override": {
+	                        "title": "Override",
+	                        "description": "Advanced option. Allows the checkout page used to be overridden. This is for developers using our API to dynamically create checkout links.",
+	                        "type": "string"
+                        }
+                    },
+                    "required": [
+                    	"product"
+                    ]
+                }
+            }
+        }
+    }
+}
