@@ -20,7 +20,8 @@
         	"button": {
         		"title": "Button",
         		"description": "The text to show on the buy button(s).",
-        		"type": "string"
+        		"type": "string",
+        		"default": "Buy"
         	},
             "products": {
                 "title": "Products",
