@@ -49,12 +49,8 @@ window.EagerPaddle = {
 				link.text = this.options.button;
 
 				// insert the data attributes
-				for(var property in product)
-				{
-					var key = property.replace('_', '-'),
-						value = product[property];
-						
-					link.dataset[key] = value;
+				for(var property in product) {
+					link.dataset[property] = product[property];
 				}
 
 				// append the link to the DOM
