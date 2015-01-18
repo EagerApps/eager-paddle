@@ -24,22 +24,22 @@
                 "default": "Buy"
             },
             "theme": {
-	            "title": "Theme",
-	            "description": "Sets the theme of the button. By default this is set to green we offer a handful of other themes too. You can set this value to none to not use any styling so you can apply your own using CSS.",
-	            "type": "string",
-	            "enum": [
-	                "green",
-	                "light",
-	                "dark",
-	                "none"
-	            ],
-	            "enumNames": {
-	                "green": "Green",
-	                "light": "Light",
-	                "dark": "Dark",
-	                "none": "None"
-	            }
-			},
+                "title": "Theme",
+                "description": "Sets the theme of the button. By default this is set to green we offer a handful of other themes too. You can set this value to none to not use any styling so you can apply your own using CSS.",
+                "type": "string",
+                "enum": [
+                    "green",
+                    "light",
+                    "dark",
+                    "none"
+                ],
+                "enumNames": {
+                    "green": "Green",
+                    "light": "Light",
+                    "dark": "Dark",
+                    "none": "None"
+                }
+            },
             "products": {
                 "title": "Products",
                 "type": "array",
@@ -58,7 +58,7 @@
                             "title": "Product",
                             "description": "Pass your Product ID from the Paddle Dashboard via this parameter.",
                             "type": "number"
-                        }
+                        },
                         "stylesheet": {
                             "title": "Stylesheet",
                             "description": "Custom CSS you want to apply to your button.",
