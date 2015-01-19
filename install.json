@@ -21,7 +21,8 @@
                 "title": "Button",
                 "description": "The text to show on the buy button(s).",
                 "type": "string",
-                "default": "Buy"
+                "default": "Buy",
+                 "order": 1
             },
             "theme": {
                 "title": "Theme",
@@ -39,6 +40,7 @@
                     "dark": "Dark",
                     "none": "None"
                 }
+                 "order": 2
             },
             "products": {
                 "title": "Products",
@@ -52,12 +54,14 @@
                             "title": "Element",
                             "description": "The element where the button will be rendered inside of.",
                             "type": "string",
-                            "format": "element"
+                            "format": "element",
+                             "order": 2
                         },
                         "product": {
                             "title": "Product",
                             "description": "Pass your Product ID from the Paddle Dashboard via this parameter.",
-                            "type": "number"
+                            "type": "number",
+                            "order": 1
                         },
                         "stylesheet": {
                             "title": "Stylesheet",
