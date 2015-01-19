@@ -22,12 +22,13 @@
                 "description": "The text to show on the buy button(s).",
                 "type": "string",
                 "default": "Buy",
-                 "order": 1
+                "order": 1
             },
             "theme": {
                 "title": "Theme",
                 "description": "Sets the theme of the button. By default this is set to green we offer a handful of other themes too. You can set this value to none to not use any styling so you can apply your own using CSS.",
                 "type": "string",
+                "order": 2,
                 "enum": [
                     "green",
                     "light",
@@ -40,7 +41,6 @@
                     "dark": "Dark",
                     "none": "None"
                 }
-                 "order": 2
             },
             "products": {
                 "title": "Products",
@@ -55,7 +55,7 @@
                             "description": "The element where the button will be rendered inside of.",
                             "type": "string",
                             "format": "element",
-                             "order": 2
+                            "order": 2
                         },
                         "product": {
                             "title": "Product",
