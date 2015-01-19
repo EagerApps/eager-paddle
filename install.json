@@ -100,7 +100,13 @@
                         "auth": {
                             "title": "Auth",
                             "description": "Use this to sign your price field and dynamically override the products price.",
-                            "type": "string"
+                            "type": "string",
+                            "showIf": {
+                                "price": {
+                                    "value": "",
+                                    "op": "!=="
+                                }
+                            }
                         },
                         "override": {
                             "title": "Override",
