@@ -42,6 +42,14 @@
                     "none": "None"
                 }
             },
+            "stylesheet": {
+                "title": "Stylesheet",
+                "description": "Custom CSS you want to apply to your button.",
+                "type": "string",
+                "showIf": {
+                    "theme": "none"
+                }
+            },
             "products": {
                 "title": "Products",
                 "type": "array",
@@ -62,14 +70,6 @@
                             "description": "Pass your Product ID from the Paddle Dashboard via this parameter.",
                             "type": "number",
                             "order": 1
-                        },
-                        "stylesheet": {
-                            "title": "Stylesheet",
-                            "description": "Custom CSS you want to apply to your button.",
-                            "type": "string",
-                            "showIf": {
-                                "theme": "none"
-                            }
                         },
                         "passthough": {
                             "title": "Passthough",
