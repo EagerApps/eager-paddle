@@ -46,6 +46,7 @@
                 "title": "Stylesheet",
                 "description": "Custom CSS you want to apply to your button.",
                 "type": "string",
+                "order": 3,
                 "showIf": {
                     "theme": "none"
                 }
