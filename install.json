@@ -29,6 +29,7 @@
                 "description": "Sets the theme of the button. By default this is set to green we offer a handful of other themes too. You can set this value to none to not use any styling so you can apply your own using CSS.",
                 "type": "string",
                 "order": 2,
+                "default": "green",
                 "enum": [
                     "green",
                     "light",
@@ -105,13 +106,7 @@
                         "auth": {
                             "title": "Auth",
                             "description": "Use this to sign your price field and dynamically override the products price.",
-                            "type": "string",
-                            "showIf": {
-                                "price": {
-                                    "value": "",
-                                    "op": "!="
-                                }
-                            }
+                            "type": "string"
                         },
                         "override": {
                             "title": "Override",
