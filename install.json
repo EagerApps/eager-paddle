@@ -62,7 +62,7 @@
                     "properties": {
                         "element": {
                             "title": "Element",
-                            "description": "The element where the button will be rendered inside of.",
+                            "description": "The containing element you would like the button to be rendered inside of, please note this must be an id. For example `div id=\"my-paddle-product\"></div>` you would enter `my-paddle-product` as the element",
                             "type": "string",
                             "format": "element",
                             "order": 2
