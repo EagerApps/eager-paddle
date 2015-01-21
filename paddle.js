@@ -1,63 +1,56 @@
 window.EagerPaddle = {
 
-	options: {},
+    options: {},
 
-	init: function(options)
-	{
-		this.options = options;
+    init: function(options) {
+        this.options = options;
         this.install();
-	},
+    },
 
-	install: function()
-	{
-		var paddle   = document.createElement('script'),
+    install: function() {
+        var paddle = document.createElement('script'),
             source = document.getElementsByTagName('script')[0];
 
         // build up the element properties
-		paddle.id    = 'paddle-checkout';
-		paddle.type  = 'text/javascript';
-		paddle.src   = 'https://paddle.s3.amazonaws.com/checkout/checkout.js';
+        paddle.id = 'paddle-checkout';
+        paddle.type = 'text/javascript';
+        paddle.src = 'https://paddle.s3.amazonaws.com/checkout/checkout.js';
 
         // insert the element where scripts were found
-		if (source !== undefined) {
-          source.parentNode.insertBefore(paddle, source);
-    	}
+        source.parentNode.insertBefore(paddle, source);
 
-    	// if paddle was installed, begin building the links
-		if (typeof document.getElementById(paddle.id) !== undefined) {
-			this.build();
-		}
-	},
+        // begin building the links
+        this.build();
+    },
 
-	build: function()
-	{
-		var products = this.options.products;
-		
-		for(var index = 0; index < products.length; index++)
-		{
-			var product = products[index],
-				wrapper = document.getElementById(product.element);
+    build: function() {
+        var products = this.options.products;
 
-			if (wrapper !== null)
-			{
-				var link = document.createElement('a');
+        for (var index = 0; index < products.length; index++) {
+            var product = products[index],
+                wrapper = Eager.createElement(product.element);
 
-				// build up the link properties
-				link.id = 'paddle-checkout-' + product.product;
-				link.className = 'paddle_button';
-				link.href = 'https://pay.paddle.com/checkout/' + product.product;
-				link.text = this.options.button;
-				link.dataset.theme = this.options.theme;
-				
-				// insert the data attributes
-				for(var property in product) {
-					link.dataset[property] = product[property];
-				}
+            if (wrapper) {
+                var link = document.createElement('a');
 
-				// append the link to the DOM
-				wrapper.appendChild(link, wrapper);
-			}
-		}
-	}
+                // build up the link properties
+                link.id = 'paddle-checkout-' + product.product;
+                link.className = 'paddle_button';
+                link.href = 'https://pay.paddle.com/checkout/' + product.product;
+                link.textContent = this.options.button;
+                link.setAttribute('data-theme', this.options.theme);
+
+                // insert the data attributes
+                for (var property in product) {
+                    if (product.hasOwnProperty(property)) {
+                        link.setAttribute('data-' + property, product[property]);
+                    }
+                }
+
+                // append the link to the DOM
+                wrapper.appendChild(link);
+            }
+        }
+    }
 
 };

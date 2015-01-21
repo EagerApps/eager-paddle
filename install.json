@@ -3,17 +3,20 @@
         "body": [
             {
                 "type": "script",
-                "src": "jquery.js"
-            },
-            {
-                "type": "script",
-                "src": "./paddle.js"
+                "src": "./paddle.js",
+                "moduleType": "global",
+                "depends": {
+                  "github.com/jquery/jquery:jquery.js": "jQuery"
+                }
             },
             {
                 "type": "script",
                 "contents": "EagerPaddle.init(INSTALL_OPTIONS)"
             }
         ]
+    },
+    "dependencies": {
+      "github.com/jquery/jquery": ">= 1.7.0, <= 1.10.2"
     },
     "options": {
         "properties": {
@@ -26,7 +29,7 @@
             },
             "theme": {
                 "title": "Theme",
-                "description": "Sets the theme of the button. By default this is set to green we offer a handful of other themes too. You can set this value to none to not use any styling so you can apply your own using CSS.",
+                "description": "The theme of the button. Set this to 'none' to apply your own, custom, CSS.",
                 "type": "string",
                 "order": 2,
                 "default": "green",
@@ -45,7 +48,7 @@
             },
             "stylesheet": {
                 "title": "Stylesheet",
-                "description": "Custom CSS you want to apply to your button.",
+                "description": "The custom CSS you wish to apply to your button(s).",
                 "type": "string",
                 "order": 3,
                 "showIf": {
@@ -60,22 +63,24 @@
                     "description": "Please fill out the product details from your paddle account.",
                     "type": "object",
                     "properties": {
-                        "element": {
-                            "title": "Element",
-                            "description": "The containing element you would like the button to be rendered inside of, please note this must be an id. For example '&lt;div id=\"my-paddle-product\"&gt;&lt;/div&gt;' you would enter 'my-paddle-product' as the element",
-                            "type": "string",
-                            "format": "element",
-                            "order": 2
-                        },
                         "product": {
                             "title": "Product",
-                            "description": "Pass your Product ID from the Paddle Dashboard via this parameter.",
+                            "description": "The Product ID listed for this product in the Paddle Dashboard.",
                             "type": "number",
-                            "order": 1
+                            "order": 1,
+                            "required": true
+                        },
+                        "element": {
+                            "title": "Element",
+                            "description": "The containing element you would like the button to be rendered inside of.",
+                            "type": "object",
+                            "format": "element",
+                            "order": 2,
+                            "required": true
                         },
                         "passthough": {
                             "title": "Passthough",
-                            "description": "This value will be passed back to your server if you're using a 'webhook' fulfillment type, or subscriptions.",
+                            "description": "If you're using subscriptions or a 'webhook' fulfillment type this value will be passed to your server",
                             "type": "string"
                         },
                         "success": {
@@ -100,12 +105,12 @@
                         },
                         "price": {
                             "title": "Price",
-                            "description": "This field allows you to dynamically override the price charged at checkout.",
+                            "description": "This field allows you to override the price charged at checkout.",
                             "type": "string"
                         },
                         "auth": {
                             "title": "Auth",
-                            "description": "Use this to sign your price field and dynamically override the products price.",
+                            "description": "Use this to sign your price field to override the products price.",
                             "type": "string"
                         },
                         "override": {
@@ -113,10 +118,7 @@
                             "description": "Advanced option. Allows the checkout page used to be overridden. This is for developers using our API to dynamically create checkout links.",
                             "type": "string"
                         }
-                    },
-                    "required": [
-                        "product"
-                    ]
+                    }
                 }
             }
         }
