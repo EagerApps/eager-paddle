@@ -1,3 +1,8 @@
+if (!window.$){
+  // Paddle, unfortunately, requires a global jQuery install
+  window.$ = jQuery;
+}
+
 window.EagerPaddle = {
 
     options: {},
